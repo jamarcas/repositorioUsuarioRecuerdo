@@ -7,11 +7,14 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
 
-/**
- * Created by JaMarCas on 08/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
-
+//Clase LoginDataBaseAdapter
 public class LoginDataBaseAdapter {
     static final String DATABASE_NAME = "Login.db";
     static final String TABLE_NAME = "TablaLogin";
@@ -55,7 +58,10 @@ public class LoginDataBaseAdapter {
     {
         return db;
     }
-    //Nombre, Apellidos, DNI, SIP, Teléfono, Email, Password
+
+    /* Clase insertEntry. Ejecuta la Query Insert para agregar un nuevo registro a la Base de Datos
+        Nombre, Apellidos, DNI, SIP, Teléfono, Email, Password
+     */
     public void insertEntry(String nombre, String apellidos, String dni, String sip, String telf,
                             String email,String password)
     {
@@ -72,12 +78,16 @@ public class LoginDataBaseAdapter {
         //Añade una nueva fila en tu tabla
         db.insert(TABLE_NAME, null, newValues);
     }
+
+    //Elimina el registro
     public int deleteEntry(String dni)
     {
         String where="DNI=?";
         int numberOFEntriesDeleted= db.delete(TABLE_NAME, where, new String[]{dni}) ;
         return numberOFEntriesDeleted;
     }
+
+    //Obtiene un Usuario según su DNI
     public String [] getEntryUser(String dni)
     {
         Cursor cursor=db.query(TABLE_NAME, null, " DNI=?", new String[]{dni}, null, null, null);
@@ -98,7 +108,9 @@ public class LoginDataBaseAdapter {
         cursor.close();
         return resultado;
     }
-    //Nombre, Apellidos, DNI, SIP, Teléfono, Email, Password
+    /*  Clase updateEntry. Actualiza los datos de un registro
+        Nombre, Apellidos, DNI, SIP, Teléfono, Email, Password
+    */
     public void  updateEntry(String nombre, String apellidos, String dni, String sip, String telf,
                              String email,String password)
     {

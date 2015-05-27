@@ -94,7 +94,8 @@
         android:layout_width="382dp"
         android:layout_height="wrap_content"
         android:weightSum="1"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        >
 
         <Button
             android:layout_width="70dp"

@@ -13,7 +13,14 @@ import android.widget.Toast;
 
 import java.sql.SQLException;
 
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
+ */
 
+//Activity Principal
 public class Principal_Activity extends Activity {
 
     Button btnIdentificar, btnRegistrar, btnIdentLogin, btnSalirLogin;
@@ -25,14 +32,15 @@ public class Principal_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal_);
 
-        // create a instance of SQLite Database
-        loginDataBaseAdapter=new LoginDataBaseAdapter(this);
+        //Instanciamos un nuevo objeto
+        loginDataBaseAdapter = new LoginDataBaseAdapter(this);
         try {
             loginDataBaseAdapter=loginDataBaseAdapter.open();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        //Instanciamos nuestros controles
         btnIdentificar=(Button)findViewById(R.id.buttonIdentificarPrincipal);
         btnRegistrar=(Button)findViewById(R.id.buttonRegistrarPrincipal);
 
@@ -66,8 +74,10 @@ public class Principal_Activity extends Activity {
 
                 //Obtenemos el password para el DNI introducido
                 String storedDates[] = loginDataBaseAdapter.getEntryUser(dni);
-                String storedDNI = storedDates[2];
-                String storedPassword = storedDates[4];
+                String storedPassword, storedDNI;
+                storedDNI = storedDates[2];
+                storedPassword = storedDates[4];
+
 
                 //Si las contraseñas son correctas
                 if(password.equals(storedPassword) && dni.equals(storedDNI))
@@ -80,10 +90,14 @@ public class Principal_Activity extends Activity {
                     iUsuario.putExtra("dniLogin", storedDates[2]);
                     startActivity(iUsuario);
                 }
-                else
+                else if(!password.equals(storedPassword))
                 {
-                    Toast.makeText(Principal_Activity.this, "NIF/NIE o Contraseña incorrecta", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Principal_Activity.this, "Contraseña incorrecta", Toast.LENGTH_LONG).show();
                     etPassword.requestFocus();
+                }
+                else if(dni != storedDNI){
+                    Toast.makeText(Principal_Activity.this, "NIF/NIE incorrecto", Toast.LENGTH_LONG).show();
+                    etDNI.requestFocus();
                 }
             }
         });

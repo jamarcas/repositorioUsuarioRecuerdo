@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,11 +13,14 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.SQLException;
 
-/**
- * Created by JaMarCas on 26/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
-
+//Clase SQLiteOpenHelper
 public class DataBaseMedicamento extends SQLiteOpenHelper {
 
     /*
@@ -36,99 +40,96 @@ public class DataBaseMedicamento extends SQLiteOpenHelper {
      */
 
     private final Context myContext;
-    private static String DB_PATH;
+    private static String DB_PATH = "/data/data/com.dam.proyecto.jamarcas.usuario/databases/";;
     private static String DB_NAME = "dbMedicamento";
     private static String Table_Name = "medicamento_table";
     private SQLiteDatabase myDataBase;
 
-    public DataBaseMedicamento(Context contexto)
+    public DataBaseMedicamento(Context contexto) //Constructor de la clase
     {
-        super(contexto, DB_NAME, null, 1);
+        super(contexto, DB_NAME, null, 3);
         this.myContext = contexto;
-        DB_PATH = "/data/data/" + contexto.getPackageName() + "/databases";
     }
+    //Crea la base de datos
+    public void createDataBase() throws IOException{
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        
-    }
+        boolean dbExist = checkDataBase(); //Comprueba si la base Existe
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if(dbExist){
 
-    }
-
-    public void createDataBase() throws IOException {
-
-        boolean dbExist = checkDataBase();
-
-        if (dbExist) {
-            // Si existe, no haemos nada!
-        } else {
-            // Llamando a este método se crea la base de datos vacía en la ruta
-            // por defecto del sistema de nuestra aplicación por lo que
-            // podremos sobreescribirla con nuestra base de datos.
+        }else{
             this.getReadableDatabase();
 
             try {
+                //Hacemos copia de la base de datos
                 copyDataBase();
             } catch (IOException e) {
-
-                throw new Error("Error copiando database");
+                throw new Error("Error copiando base de datos");
             }
         }
     }
 
-    private boolean checkDataBase() {
+    private boolean checkDataBase(){
 
-        SQLiteDatabase checkDB = null;
+        SQLiteDatabase checkDB = null; //Definimos una SQLiteDataBase vacía
 
-        try {
-            String myPath = DB_PATH + DB_NAME;
+        try{
+            String myPath = DB_PATH + DB_NAME; //Asigamos donde se localizará nuesta base de datos
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        }catch(SQLiteException e){}
 
-        } catch (SQLiteException e) {
-            // Base de datos no creada todavia
-        }
-
-        if (checkDB != null) {
-
+        if(checkDB != null){ //Si no está vacía
             checkDB.close();
         }
 
         return checkDB != null ? true : false;
+    }
+
+    //Clase que realiza la copia de nuesta base de datos.
+    private void copyDataBase() throws IOException{
+        //Abre un flujo de entrada donde está nuestra base de datos almacenada en assets
+        InputStream myInput = myContext.getAssets().open(DB_NAME);
+        String outFileName = DB_PATH + DB_NAME;
+        //Crea un flujo de salida creando un nuevo objeto de tipo OutputStream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = myInput.read(buffer))>0){
+            myOutput.write(buffer, 0, length);
+        }
+        //Cerramos objetos
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
 
     }
 
-    public void openDataBase() throws SQLException {
+    //Abrimos base de datos
+    public void openDataBase() throws SQLException{
         String myPath = DB_PATH + DB_NAME;
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
     }
 
     @Override
     public synchronized void close() {
-        if (myDataBase != null)
+        if(myDataBase != null)
             myDataBase.close();
+
         super.close();
     }
 
-    private void copyDataBase() throws IOException {
-
-        OutputStream databaseOutputStream = new FileOutputStream(DB_PATH + DB_NAME);
-        InputStream databaseInputStream;
-
-        byte[] buffer = new byte[1024];
-        int length;
-
-        databaseInputStream = myContext.getAssets().open("dbMedicamento");
-        while ((length = databaseInputStream.read(buffer)) > 0) {
-            databaseOutputStream.write(buffer);
-        }
-
-        databaseInputStream.close();
-        databaseOutputStream.flush();
-        databaseOutputStream.close();
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        //No hace nada ya que la base de datos es externa
     }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        //no hace Upgrade
+    }
+
+    //Función para guardar en un string todos los datos del medicamento, almacenados en el registro
     public String [] getEntryMedicamento(String nombreMedicamento)
     {
         Cursor cursor = myDataBase.query(Table_Name, null, " Medicamento=?", new String[]{nombreMedicamento}, null, null, null);

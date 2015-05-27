@@ -8,11 +8,14 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.sql.SQLException;
 
-/**
- * Created by JaMarCas on 27/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
-
+//Activity que mostrará la información del medicamento seleccionado.
 public class Medicamento extends Activity {
     TextView tvMedic, tvComp, tvProp, tvIndic, tvPos, tvContra, tvEfec, tvInter, tvIntox, tvPresent;
     Intent iMedicamento;
@@ -52,7 +55,7 @@ public class Medicamento extends Activity {
         //medicamento (pos 0), composición (pos 1), propiedades (pos 2), indicaciones (pos 3),
         //posología (pos 4), contraindicaciones (pos 5), efectos (pos 6), interacciones (pos 7), intoxicaciones (pos 8),
         //presentación (pos 9)
-        nomMedic = datos[0];
+        //nomMedic = datos[0];
         comp = datos[1];
         prop = datos[2];
         indic = datos[3];

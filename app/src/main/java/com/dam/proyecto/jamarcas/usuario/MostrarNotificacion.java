@@ -7,10 +7,14 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 
-/**
- * Created by JaMarCas on 09/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
+//Activity que mostrará las notificaciones.
 public class MostrarNotificacion extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

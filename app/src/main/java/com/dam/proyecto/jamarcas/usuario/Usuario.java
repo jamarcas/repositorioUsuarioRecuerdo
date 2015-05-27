@@ -15,11 +15,14 @@ import android.widget.Toast;
 
 import java.sql.SQLException;
 import java.util.Calendar;
-
-/**
- * Created by JaMarCas on 08/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
+//Activity que muestra la información del usuario.
 public class Usuario extends Activity {
     //Variables de los controles
     TextView tvNombre, tvDNI, tvSIP;
@@ -112,7 +115,7 @@ public class Usuario extends Activity {
                 calendar.set(Calendar.SECOND, 0);
                 //Repetición de la notificación.
                 alarma.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), frec, iPendiente);
-                Toast.makeText(Usuario.this, "Cada "+frecuencia+" horas tiene que tomarse el medicamento", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Usuario.this, "No olvide que tomarse el medicamento", Toast.LENGTH_SHORT).show();
             }
         });
 

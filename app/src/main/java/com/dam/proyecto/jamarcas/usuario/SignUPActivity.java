@@ -12,10 +12,14 @@ import android.widget.Toast;
 
 import java.sql.SQLException;
 
-/**
- * Created by JaMarCas on 08/05/2015.
+/*
+ * Autor: Javier Martín Castro
+ * Ciclo Superior: DAM (Desarrollo de Aplicaciones Multiplataforma)
+ * Centro: Florida
+ * Fecha: 28 de Mayo de 2015
  */
 
+//Activity que muestra el popup para acceder a la aplicación.
 public class SignUPActivity extends Activity
 {
     //Variables de los controles
@@ -67,37 +71,36 @@ public class SignUPActivity extends Activity
                 //Si algún campo está vacío avisar
                 if(nombre.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Nombre vacío", Toast.LENGTH_LONG).show();
                     etNombre.requestFocus();
                     return;
                 }
                 if(apellidos.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Apellidos vacío", Toast.LENGTH_LONG).show();
                     etApell.requestFocus();
                     return;
                 }
-                if(dni.equals(""))
-                {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                if(dni.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Campo NIF/NIE vacío", Toast.LENGTH_LONG).show();
                     etDNI.requestFocus();
                     return;
                 }
                 if(sip.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo SIP vacío", Toast.LENGTH_LONG).show();
                     etSIP.requestFocus();
                     return;
                 }
                 if(telf.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Teléfono vacío", Toast.LENGTH_LONG).show();
                     etTelf.requestFocus();
                     return;
                 }
                 if(email.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Email vacío", Toast.LENGTH_LONG).show();
                     etEmail.requestFocus();
                     return;
                 }
@@ -134,36 +137,36 @@ public class SignUPActivity extends Activity
                 //Si algún campo está vacío avisar
                 if(nombre.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Nombre vacío", Toast.LENGTH_LONG).show();
                     etNombre.requestFocus();
                     return;
                 }
                 if(apellidos.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Apellidos vacío", Toast.LENGTH_LONG).show();
                     etApell.requestFocus();
                     return;
                 }
                 if(dni.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo NIF/NIE vacío", Toast.LENGTH_LONG).show();
                     etDNI.requestFocus();
                     return;
                 }
                 if(sip.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo SIP vacío", Toast.LENGTH_LONG).show();
                     etSIP.requestFocus();
                     return;
                 }
                 if(telf.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Teléfono vacío", Toast.LENGTH_LONG).show();
                     etTelf.requestFocus();
                     return;
                 }
                 if(email.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Campo vacío", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Campo Email vacío", Toast.LENGTH_LONG).show();
                     etEmail.requestFocus();
                     return;
                 }
@@ -183,7 +186,7 @@ public class SignUPActivity extends Activity
             }
         });
     }
-
+    //Añadimos un Dialogo para comprobar si el DNI introducido es correcto
     private void alertaInsertar(char letra, final String nombre, final String apell, final String dni, final String sip) {
 
         AlertDialog.Builder dialogoAlerta = new AlertDialog.Builder(this);
@@ -213,6 +216,7 @@ public class SignUPActivity extends Activity
         alerta.show();
     }
 
+    //Añadimos un Dialogo para comprobar si el DNI introducido es correcto
     private void alertaModificar(char letra, final String nombre, final String apell, final String dni, final String sip) {
 
         AlertDialog.Builder dialogoAlerta = new AlertDialog.Builder(this);
@@ -243,6 +247,7 @@ public class SignUPActivity extends Activity
         alerta.show();
     }
 
+    //Función que calcula la letra de nuestro documento
     private char comprobar(String dni) {
         int dniInteger = Integer.parseInt(dni);
         String juegoCaracteres="TRWAGMYFPDXBNJZSQVHLCKET";
