@@ -46,8 +46,8 @@ public class Principal_Activity extends Activity {
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //getApplicationContext()
-                Intent intentSignUP=new Intent(Principal_Activity.this,SignUPActivity.class);
+                Intent intentSignUP = new Intent(Principal_Activity.this, SignUPActivity.class);
+                //intentSignUP.putExtra("Opcion", 1);
                 startActivity(intentSignUP);
             }
         });
@@ -95,10 +95,10 @@ public class Principal_Activity extends Activity {
                     Toast.makeText(Principal_Activity.this, "Contraseña incorrecta", Toast.LENGTH_LONG).show();
                     etPassword.requestFocus();
                 }
-                else if(dni != storedDNI){
+                /*else if(dni != storedDNI){
                     Toast.makeText(Principal_Activity.this, "NIF/NIE incorrecto", Toast.LENGTH_LONG).show();
                     etDNI.requestFocus();
-                }
+                }*/
             }
         });
         dialog.show(); //Mostramos Diálogo

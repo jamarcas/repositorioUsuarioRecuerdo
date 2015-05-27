@@ -28,6 +28,8 @@ public class SignUPActivity extends Activity
     Button btnCrearRegistro, btnModificar;
     String nombre, apellidos, dni, sip, telf, email, password, confirmPassword;
 
+    //Intent i = getIntent();
+
     LoginDataBaseAdapter loginDataBaseAdapter;
 
     @Override
@@ -44,6 +46,17 @@ public class SignUPActivity extends Activity
             e.printStackTrace();
         }
 
+        /*int opcion = i.getExtras().getInt("Opcion");
+
+        switch (opcion){
+            case 1:
+                btnModificar.setVisibility(View.INVISIBLE);
+                break;
+            case 2:
+                btnCrearRegistro.setVisibility(View.INVISIBLE);
+                break;
+        }*/
+
         //Instancia los controles de los EditText
         //Nombre, Apellidos, DNI, SIP, Teléfono, Email, Password
         etNombre=(EditText)findViewById(R.id.editTextNombre);
@@ -58,7 +71,6 @@ public class SignUPActivity extends Activity
         btnCrearRegistro=(Button)findViewById(R.id.buttonCrearRegistro);
         btnCrearRegistro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                btnModificar.setVisibility(View.INVISIBLE);
                 nombre = etNombre.getText().toString();
                 apellidos = etApell.getText().toString();
                 dni = etDNI.getText().toString();
@@ -124,7 +136,6 @@ public class SignUPActivity extends Activity
         btnModificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnCrearRegistro.setVisibility(View.INVISIBLE);
                 nombre = etNombre.getText().toString();
                 apellidos = etApell.getText().toString();
                 dni = etDNI.getText().toString();

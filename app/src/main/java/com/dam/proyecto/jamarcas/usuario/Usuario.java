@@ -82,6 +82,7 @@ public class Usuario extends Activity {
             @Override
             public void onClick(View v) {
                 Intent iModificar = new Intent(Usuario.this, SignUPActivity.class);
+                //iModificar.putExtra("Opcion", 2);
                 startActivity(iModificar);
             }
         });
