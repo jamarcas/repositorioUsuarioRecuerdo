@@ -33,11 +33,9 @@ public class Principal_Activity extends Activity {
             e.printStackTrace();
         }
 
-        // Get The Refference Of Buttons
         btnIdentificar=(Button)findViewById(R.id.buttonIdentificarPrincipal);
         btnRegistrar=(Button)findViewById(R.id.buttonRegistrarPrincipal);
 
-        // Set OnClick Listener on SignUp button
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //getApplicationContext()
@@ -46,7 +44,7 @@ public class Principal_Activity extends Activity {
             }
         });
     }
-    // Methos to handleClick Event of Sign In Button
+
     public void signIn(View V)
     {
         final Dialog dialog = new Dialog(Principal_Activity.this);
@@ -68,10 +66,11 @@ public class Principal_Activity extends Activity {
 
                 //Obtenemos el password para el DNI introducido
                 String storedDates[] = loginDataBaseAdapter.getEntryUser(dni);
+                String storedDNI = storedDates[2];
                 String storedPassword = storedDates[4];
 
                 //Si las contraseñas son correctas
-                if(password.equals(storedPassword))
+                if(password.equals(storedPassword) && dni.equals(storedDNI))
                 {
                     Toast.makeText(Principal_Activity.this, "Inicio de sesión correcto", Toast.LENGTH_LONG).show();
                     dialog.dismiss();

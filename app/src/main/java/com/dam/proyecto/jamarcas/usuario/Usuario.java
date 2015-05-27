@@ -19,6 +19,7 @@ import java.util.Calendar;
 /**
  * Created by JaMarCas on 08/05/2015.
  */
+
 public class Usuario extends Activity {
     //Variables de los controles
     TextView tvNombre, tvDNI, tvSIP;

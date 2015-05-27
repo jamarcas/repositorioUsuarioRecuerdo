@@ -10,6 +10,7 @@ import android.os.Bundle;
 /**
  * Created by JaMarCas on 09/05/2015.
  */
+
 public class MostrarNotificacion extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

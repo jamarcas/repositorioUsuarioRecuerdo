@@ -10,6 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by JaMarCas on 08/05/2015.
  */
+
 public class LoginDataBaseAdapter {
     static final String DATABASE_NAME = "Login.db";
     static final String TABLE_NAME = "TablaLogin";

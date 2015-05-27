@@ -15,6 +15,7 @@ import java.sql.SQLException;
 /**
  * Created by JaMarCas on 08/05/2015.
  */
+
 public class SignUPActivity extends Activity
 {
     //Variables de los controles
@@ -53,6 +54,7 @@ public class SignUPActivity extends Activity
         btnCrearRegistro=(Button)findViewById(R.id.buttonCrearRegistro);
         btnCrearRegistro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                btnModificar.setVisibility(View.INVISIBLE);
                 nombre = etNombre.getText().toString();
                 apellidos = etApell.getText().toString();
                 dni = etDNI.getText().toString();
@@ -119,6 +121,7 @@ public class SignUPActivity extends Activity
         btnModificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnCrearRegistro.setVisibility(View.INVISIBLE);
                 nombre = etNombre.getText().toString();
                 apellidos = etApell.getText().toString();
                 dni = etDNI.getText().toString();

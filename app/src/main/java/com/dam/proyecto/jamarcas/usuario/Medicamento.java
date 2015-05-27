@@ -11,6 +11,7 @@ import java.sql.SQLException;
 /**
  * Created by JaMarCas on 27/05/2015.
  */
+
 public class Medicamento extends Activity {
     TextView tvMedic, tvComp, tvProp, tvIndic, tvPos, tvContra, tvEfec, tvInter, tvIntox, tvPresent;
     Intent iMedicamento;
