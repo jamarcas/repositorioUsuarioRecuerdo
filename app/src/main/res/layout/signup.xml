@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <EditText
+                android:id="@+id/editTextNombre"
+                android:hint="Nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextApellidos"
+                android:hint="Apellidos" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextDNI"
+                android:hint="NIF/NIE" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextSIP"
+                android:hint="SIP" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextTelf"
+                android:hint="Teléfono" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextEmail"
+                android:hint="Email" />
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/editTextConfirmPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/buttonCrearRegistro"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Insertar"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/ic_action_new" />
+
+                <Button
+                    android:id="@+id/buttonModificar"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Modificar"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

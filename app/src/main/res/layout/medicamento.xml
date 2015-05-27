@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sanidad_publica"
+    android:alpha=".65">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicamento"
+            android:id="@+id/tvMedicamento"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarMedicamento" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Composición"
+            android:id="@+id/tvComposicion"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarComposicion" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Propiedades"
+            android:id="@+id/tvPropiedades"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarPropiedades" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indicaciones"
+            android:id="@+id/tvIndicaciones"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarIndicaciones" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Posología"
+            android:id="@+id/tvPosologia"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarPosologia" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraindicaciones"
+            android:id="@+id/tvContraindicaciones"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarContraindicaciones" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interacciones"
+            android:id="@+id/tvInteracciones"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarInteracciones" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Efectos Secundarios"
+            android:id="@+id/tvEfectos"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarEfectos" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intoxicaciones y Tratamiento"
+            android:id="@+id/tvIntoxicaciones"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarIntoxicaciones" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Presentación"
+            android:id="@+id/tvPresentacion"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMostrarPresentacion" />
+    </LinearLayout>
+
+</RelativeLayout>

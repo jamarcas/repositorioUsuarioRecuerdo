@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sanidad_publica"
+    style="@android:style/Theme.Translucent"
+    android:alpha=".70">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:id="@+id/textView"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNombreCompleto"
+        android:hint="Nombre y Apellidos" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIF/NIE"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDNI"
+        android:hint="NIF/NIE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIP"
+        android:id="@+id/textView3"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewSIP"
+        android:hint="SIP" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tratamiento"
+        android:id="@+id/textView4"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTratamiento"
+        android:hint="Tratamiento" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frecuencia Toma en horas"
+        android:id="@+id/textView5"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextFrecuencia"
+        android:hint="¿Cada cuánto se tiene que tomar el medicamento?" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comienzo Tratamiento"
+        android:id="@+id/textView6"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:id="@+id/buttonModificarUsuario"
+            android:drawableLeft="@drawable/ic_action_edit" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/buttonEliminarUsuario"
+            android:drawableLeft="@drawable/ic_action_remove" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/buttonTratamiento"
+            android:layout_gravity="left"
+            android:drawableLeft="@drawable/ic_action_about" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:id="@+id/buttonRecordatorio"
+            android:drawableLeft="@drawable/ic_action_add_alarm" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:id="@+id/buttonFin"
+            android:drawableRight="@drawable/ic_action_alarms"
+            android:hint="-" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_gravity="center_horizontal">
+
+    </LinearLayout>
+
+</LinearLayout>
